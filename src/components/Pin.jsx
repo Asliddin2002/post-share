@@ -66,8 +66,8 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
     } else {
       NotificationManager.error(
         "Error message",
-        "Afsuski bu postni o'chira olmaysiz. O'chirish uchun admin ga murojat qiling!",
-        4000
+        "Afsuski bu postni o'chira olmaysiz. Chunki bu post sizga tegishli emas. O'chirish uchun admin ga murojat qiling!",
+        5000
       );
     }
   };
@@ -135,18 +135,16 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                     : destination.slice(8)}
                 </a>
               )}
-              {postedBy?._id === user?.id && (
-                <button
-                  className="bg-white p-2 opacity-70 hover:opacity-100 text-dark font-bold   text-base rounded-full hover:shadow-md outline-none"
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    deletePin(_id);
-                  }}
-                >
-                  <AiTwotoneDelete />
-                </button>
-              )}
+              <button
+                className="bg-white p-2 opacity-70 hover:opacity-100 text-dark font-bold   text-base rounded-full hover:shadow-md outline-none"
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  deletePin(_id);
+                }}
+              >
+                <AiTwotoneDelete />
+              </button>
             </div>
           </div>
         )}
