@@ -13,7 +13,7 @@ const Login = () => {
 
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => {
-      localStorage.setItem("token", JSON.stringify(codeResponse.access_token));
+      sessionStorage.setItem("token", JSON.stringify(codeResponse.access_token));
       setUser(codeResponse);
     },
     onError: (error) => console.log("Login Failed:", error),
@@ -31,7 +31,7 @@ const Login = () => {
           }
         )
         .then((res) => {
-          localStorage.setItem("user", JSON.stringify(res.data));
+          sessionStorage.setItem("user", JSON.stringify(res.data));
           setProfile(res.data);
           postSanity(res.data);
 

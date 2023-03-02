@@ -24,7 +24,7 @@ const UserProfile = () => {
 
   const logOut = () => {
     googleLogout();
-    localStorage.clear();
+    sessionStorage.clear();
     navigate("/login");
   };
 

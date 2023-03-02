@@ -1,7 +1,7 @@
 export const fetchUser = () => {
   const userInfo =
-    localStorage.getItem("user") !== undefined
-      ? JSON.parse(localStorage.getItem("user"))
-      : localStorage.clear("user");
+    sessionStorage.getItem("user") !== undefined
+      ? JSON.parse(sessionStorage.getItem("user"))
+      : sessionStorage.clear("user");
   return userInfo;
 };
